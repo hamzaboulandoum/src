@@ -1,0 +1,55 @@
+[0.000000] (-) TimerEvent: {}
+[0.000210] (-) JobUnselected: {'identifier': 'assistant'}
+[0.000294] (-) JobUnselected: {'identifier': 'examples_rclcpp_minimal_action_client'}
+[0.001243] (-) JobUnselected: {'identifier': 'examples_rclcpp_minimal_action_server'}
+[0.001378] (-) JobUnselected: {'identifier': 'examples_rclcpp_minimal_client'}
+[0.001406] (-) JobUnselected: {'identifier': 'examples_rclcpp_minimal_composition'}
+[0.001458] (-) JobUnselected: {'identifier': 'examples_rclcpp_minimal_publisher'}
+[0.001480] (-) JobUnselected: {'identifier': 'examples_rclcpp_minimal_service'}
+[0.001502] (-) JobUnselected: {'identifier': 'examples_rclcpp_minimal_subscriber'}
+[0.002412] (-) JobUnselected: {'identifier': 'examples_rclcpp_minimal_timer'}
+[0.002646] (-) JobUnselected: {'identifier': 'examples_rclcpp_multithreaded_executor'}
+[0.002693] (-) JobUnselected: {'identifier': 'examples_rclpy_executors'}
+[0.002735] (-) JobUnselected: {'identifier': 'examples_rclpy_minimal_action_client'}
+[0.002758] (-) JobUnselected: {'identifier': 'examples_rclpy_minimal_action_server'}
+[0.002909] (-) JobUnselected: {'identifier': 'examples_rclpy_minimal_client'}
+[0.002939] (-) JobUnselected: {'identifier': 'examples_rclpy_minimal_publisher'}
+[0.003031] (-) JobUnselected: {'identifier': 'examples_rclpy_minimal_service'}
+[0.003065] (-) JobUnselected: {'identifier': 'examples_rclpy_minimal_subscriber'}
+[0.003087] (-) JobUnselected: {'identifier': 'py_srvcli'}
+[0.003124] (-) JobUnselected: {'identifier': 'robotique'}
+[0.003149] (python_parameters) JobQueued: {'identifier': 'python_parameters', 'dependencies': OrderedDict()}
+[0.003175] (python_parameters) JobStarted: {'identifier': 'python_parameters'}
+[0.099804] (-) TimerEvent: {}
+[0.200383] (-) TimerEvent: {}
+[0.300790] (-) TimerEvent: {}
+[0.401280] (-) TimerEvent: {}
+[0.501652] (-) TimerEvent: {}
+[0.601972] (-) TimerEvent: {}
+[0.659191] (python_parameters) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../build/python_parameters', 'build', '--build-base', '/home/hamza/ros2_ws/src/build/python_parameters/build', 'install', '--record', '/home/hamza/ros2_ws/src/build/python_parameters/install.log', '--install-scripts', '$base/lib/python_parameters', '--single-version-externally-managed'], 'cwd': '/home/hamza/ros2_ws/src/python_parameters', 'env': {'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'hamza', 'LC_TIME': 'ar_MA.UTF-8', 'SSH_AGENT_PID': '1722', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib', 'HOME': '/home/hamza', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'LC_MONETARY': 'ar_MA.UTF-8', 'MANAGERPID': '1538', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'IM_CONFIG_PHASE': '1', 'ROS_DISTRO': 'foxy', 'LOGNAME': 'hamza', 'JOURNAL_STREAM': '8:52388', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'hamza', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '1', 'WINDOWPATH': '2', 'PATH': '/opt/ros/foxy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'SESSION_MANAGER': 'local/hamza-Precision-7710:@/tmp/.ICE-unix/1760,unix/hamza-Precision-7710:/tmp/.ICE-unix/1760', 'INVOCATION_ID': 'e6e2d4678cb54318a2abeb1988b59ecf', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'ar_MA.UTF-8', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/4ac31937_5f82_4a41_b246_766814114c7d', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_TELEPHONE': 'ar_MA.UTF-8', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.113', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'ROS_DOMAIN_ID': '1', 'AMENT_PREFIX_PATH': '/opt/ros/foxy', 'SHELL': '/bin/bash', 'LC_NAME': 'ar_MA.UTF-8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'ar_MA.UTF-8', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GJS_DEBUG_OUTPUT': 'stderr', 'LC_IDENTIFICATION': 'ar_MA.UTF-8', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/hamza/ros2_ws/src/build/python_parameters', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/hamza/ros2_ws/src/build/python_parameters/prefix_override:/home/hamza/ros2_ws/src/install/python_parameters/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages', 'LC_NUMERIC': 'ar_MA.UTF-8', 'LC_PAPER': 'ar_MA.UTF-8', 'COLCON': '1', 'VTE_VERSION': '6003'}, 'shell': False}
+[0.702154] (-) TimerEvent: {}
+[0.802632] (-) TimerEvent: {}
+[0.895924] (python_parameters) StdoutLine: {'line': b'running egg_info\n'}
+[0.896505] (python_parameters) StdoutLine: {'line': b'writing ../build/python_parameters/python_parameters.egg-info/PKG-INFO\n'}
+[0.897021] (python_parameters) StdoutLine: {'line': b'writing dependency_links to ../build/python_parameters/python_parameters.egg-info/dependency_links.txt\n'}
+[0.897260] (python_parameters) StdoutLine: {'line': b'writing entry points to ../build/python_parameters/python_parameters.egg-info/entry_points.txt\n'}
+[0.897488] (python_parameters) StdoutLine: {'line': b'writing requirements to ../build/python_parameters/python_parameters.egg-info/requires.txt\n'}
+[0.897625] (python_parameters) StdoutLine: {'line': b'writing top-level names to ../build/python_parameters/python_parameters.egg-info/top_level.txt\n'}
+[0.902754] (-) TimerEvent: {}
+[0.934955] (python_parameters) StdoutLine: {'line': b"reading manifest file '../build/python_parameters/python_parameters.egg-info/SOURCES.txt'\n"}
+[0.936533] (python_parameters) StdoutLine: {'line': b"writing manifest file '../build/python_parameters/python_parameters.egg-info/SOURCES.txt'\n"}
+[0.936809] (python_parameters) StdoutLine: {'line': b'running build\n'}
+[0.936887] (python_parameters) StdoutLine: {'line': b'running build_py\n'}
+[0.937130] (python_parameters) StdoutLine: {'line': b'running install\n'}
+[0.938125] (python_parameters) StdoutLine: {'line': b'running install_lib\n'}
+[0.939592] (python_parameters) StdoutLine: {'line': b'running install_data\n'}
+[0.940082] (python_parameters) StdoutLine: {'line': b'copying launch/python_parameters_launch.py -> /home/hamza/ros2_ws/src/install/python_parameters/share/python_parameters\n'}
+[0.940404] (python_parameters) StdoutLine: {'line': b'running install_egg_info\n'}
+[0.942156] (python_parameters) StdoutLine: {'line': b"removing '/home/hamza/ros2_ws/src/install/python_parameters/lib/python3.8/site-packages/python_parameters-0.0.0-py3.8.egg-info' (and everything under it)\n"}
+[0.942482] (python_parameters) StdoutLine: {'line': b'Copying ../build/python_parameters/python_parameters.egg-info to /home/hamza/ros2_ws/src/install/python_parameters/lib/python3.8/site-packages/python_parameters-0.0.0-py3.8.egg-info\n'}
+[0.943489] (python_parameters) StdoutLine: {'line': b'running install_scripts\n'}
+[0.961746] (python_parameters) StdoutLine: {'line': b'Installing minimal_param_node script to /home/hamza/ros2_ws/src/install/python_parameters/lib/python_parameters\n'}
+[0.962189] (python_parameters) StdoutLine: {'line': b"writing list of installed files to '/home/hamza/ros2_ws/src/build/python_parameters/install.log'\n"}
+[0.984575] (python_parameters) CommandEnded: {'returncode': 0}
+[1.001134] (python_parameters) JobEnded: {'identifier': 'python_parameters', 'rc': 0}
+[1.002067] (-) EventReactorShutdown: {}

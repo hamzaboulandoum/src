@@ -1,0 +1,6 @@
+source;share/robotique/hook/pythonpath.ps1
+source;share/robotique/hook/pythonpath.dsv
+source;share/robotique/hook/pythonpath.sh
+source;share/robotique/hook/ament_prefix_path.ps1
+source;share/robotique/hook/ament_prefix_path.dsv
+source;share/robotique/hook/ament_prefix_path.sh

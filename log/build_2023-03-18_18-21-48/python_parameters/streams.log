@@ -1,0 +1,22 @@
+[0.657s] Invoking command in '/home/hamza/ros2_ws/src/python_parameters': PYTHONPATH=/home/hamza/ros2_ws/src/build/python_parameters/prefix_override:/home/hamza/ros2_ws/src/install/python_parameters/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/python_parameters build --build-base /home/hamza/ros2_ws/src/build/python_parameters/build install --record /home/hamza/ros2_ws/src/build/python_parameters/install.log --install-scripts $base/lib/python_parameters --single-version-externally-managed
+[0.893s] running egg_info
+[0.893s] writing ../build/python_parameters/python_parameters.egg-info/PKG-INFO
+[0.894s] writing dependency_links to ../build/python_parameters/python_parameters.egg-info/dependency_links.txt
+[0.894s] writing entry points to ../build/python_parameters/python_parameters.egg-info/entry_points.txt
+[0.894s] writing requirements to ../build/python_parameters/python_parameters.egg-info/requires.txt
+[0.894s] writing top-level names to ../build/python_parameters/python_parameters.egg-info/top_level.txt
+[0.932s] reading manifest file '../build/python_parameters/python_parameters.egg-info/SOURCES.txt'
+[0.934s] writing manifest file '../build/python_parameters/python_parameters.egg-info/SOURCES.txt'
+[0.934s] running build
+[0.934s] running build_py
+[0.934s] running install
+[0.935s] running install_lib
+[0.937s] running install_data
+[0.937s] copying launch/python_parameters_launch.py -> /home/hamza/ros2_ws/src/install/python_parameters/share/python_parameters
+[0.937s] running install_egg_info
+[0.939s] removing '/home/hamza/ros2_ws/src/install/python_parameters/lib/python3.8/site-packages/python_parameters-0.0.0-py3.8.egg-info' (and everything under it)
+[0.939s] Copying ../build/python_parameters/python_parameters.egg-info to /home/hamza/ros2_ws/src/install/python_parameters/lib/python3.8/site-packages/python_parameters-0.0.0-py3.8.egg-info
+[0.940s] running install_scripts
+[0.959s] Installing minimal_param_node script to /home/hamza/ros2_ws/src/install/python_parameters/lib/python_parameters
+[0.959s] writing list of installed files to '/home/hamza/ros2_ws/src/build/python_parameters/install.log'
+[0.982s] Invoked command in '/home/hamza/ros2_ws/src/python_parameters' returned '0': PYTHONPATH=/home/hamza/ros2_ws/src/build/python_parameters/prefix_override:/home/hamza/ros2_ws/src/install/python_parameters/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/python_parameters build --build-base /home/hamza/ros2_ws/src/build/python_parameters/build install --record /home/hamza/ros2_ws/src/build/python_parameters/install.log --install-scripts $base/lib/python_parameters --single-version-externally-managed
