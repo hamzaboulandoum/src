@@ -7,6 +7,8 @@ import serial
 import numpy as np
 import math
 
+a = 0
+
 #constants
 WHEEL_RADIUS = 0.05
 DISTANCE_FROM_CENTER = 0.18
