@@ -3,8 +3,6 @@ from rclpy.node import Node
 from geometry_msgs.msg import Twist
 import serial
 import numpy as np
-
-
 import math
 
 
@@ -44,7 +42,8 @@ class Driver(Node):
             vx = linear_velocity_x/math.sqrt(linear_velocity_x**2 + linear_velocity_y**2)
             vy = linear_velocity_y/math.sqrt(linear_velocity_x**2 + linear_velocity_y**2)
         
-        data = str(vx) + " " + str(vy)        
+        data = str(vx) + " " + str(vy)
+        self.get_logger().info(str(data))
         self.serial.write(data.encode()) # sending data to arduino 
 
 
