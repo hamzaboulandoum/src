@@ -10,8 +10,10 @@ import numpy as np
 #constants
 WHEEL_RADIUS = 0.05
 DISTANCE_FROM_CENTER = 0.18
+CORR_CONST = 0.0955
 
-SYSTEM_MATRIX = 1/WHEEL_RADIUS*np.array([[1, 0, - DISTANCE_FROM_CENTER],[-1/2, -np.sqrt(3)/2, - DISTANCE_FROM_CENTER],[-1/2, np.sqrt(3)/2, - DISTANCE_FROM_CENTER]])
+
+SYSTEM_MATRIX = CORR_CONST/WHEEL_RADIUS*np.array([[1, 0, - DISTANCE_FROM_CENTER],[-1/2, -np.sqrt(3)/2, - DISTANCE_FROM_CENTER],[-1/2, np.sqrt(3)/2, - DISTANCE_FROM_CENTER]])
 
 class OdometryPublisher(Node):
 
@@ -26,7 +28,7 @@ class OdometryPublisher(Node):
         self.current_time = self.get_clock().now()
         self.last_time = self.get_clock().now()
 
-        self.timer = self.create_timer(1.0, self.timer_callback)
+        self.timer = self.create_timer(0.7, self.timer_callback)
 
         self.declare_parameter('serial_port', value="/dev/ttyUSB0")
         self.serial_port = self.get_parameter('serial_port').value
@@ -41,7 +43,7 @@ class OdometryPublisher(Node):
         while len(encoder_data) < 3 :
             encoder_data = self.serial.readline().decode().strip().split(', ')
 
-        self.get_logger().info(str(encoder_data))
+        #self.get_logger().info(str(encoder_data))
 
         # Parse encoder data and calculate odometry values for a three-wheeled omnidirectional robot
         u_1, u_2, u_3 = map(float, encoder_data)
@@ -49,6 +51,7 @@ class OdometryPublisher(Node):
         velocity = np.dot(np.linalg.inv(SYSTEM_MATRIX),U)
         v_x = velocity[0]
         v_y = velocity[1]
+        self.get_logger().info(str(v_x) +' , ' str(v_y))
         self.vx = v_x
         self.vy = v_y
         self.vth = 0.0
