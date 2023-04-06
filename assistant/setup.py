@@ -22,8 +22,8 @@ setup(
         'console_scripts': [
         'talker = assistant.publisher_member_function:main',
         'listener = assistant.subscriber_member_function:main',
-        'driver = assistant.driver:main'
-        'broadcaster = assistant.broadcaster: main'
+        'driver = assistant.driver:main',
+        'broadcaster = assistant.broadcaster:main'
         ],
     },
 )
