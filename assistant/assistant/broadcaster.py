@@ -51,7 +51,7 @@ class OdometryPublisher(Node):
         velocity = np.dot(np.linalg.inv(SYSTEM_MATRIX),U)
         v_x = velocity[0]
         v_y = velocity[1]
-        self.get_logger().info(str(v_x) +' , ' str(v_y))
+        self.get_logger().info(str(v_x) +' , ' + str(v_y))
         self.vx = v_x
         self.vy = v_y
         self.vth = 0.0
