@@ -7,7 +7,6 @@ import numpy as np
 
 import math
 
-
 #constants
 WHEEL_RADIUS = 0.05
 DISTANCE_FROM_CENTER = 0.18
