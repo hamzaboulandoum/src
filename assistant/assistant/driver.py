@@ -15,7 +15,7 @@ SYSTEM_MATRIX = 1/WHEEL_RADIUS*np.array([[1, 0, - DISTANCE_FROM_CENTER],[-1/2, -
 
 class Driver(Node):
     def __init__(self):
-        super().__init__('velocity_to_angle_node')
+        super().__init__('driver')
         self.subscription = self.create_subscription(
             Twist,
             'cmd_vel',
