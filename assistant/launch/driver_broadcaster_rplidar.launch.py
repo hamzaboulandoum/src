@@ -37,7 +37,7 @@ def generate_launch_description():
             description='Serial port for the rplidar node'
         ),
         Node(
-            ackage='rplidar_ros',
+            package='rplidar_ros',
             executable='rplidar_composition',
             name='rplidar_composition',
             parameters=[
