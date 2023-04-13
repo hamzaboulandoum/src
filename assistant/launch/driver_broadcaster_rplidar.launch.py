@@ -15,7 +15,7 @@ def generate_launch_description():
         Node(
             package='assistant',
             executable='dirver',
-            name='dirver',
+            name='driver',
             parameters=[
                 {'serial_port': LaunchConfiguration('driver_serial_port')}
             ]
