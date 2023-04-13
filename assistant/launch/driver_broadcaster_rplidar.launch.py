@@ -15,7 +15,7 @@ def generate_launch_description():
         Node(
             package='assistant',
             executable='dirver',
-            name='dirver'
+            name='dirver',
             parameters=[
                 {'serial_port': LaunchConfiguration('driver_serial_port')}
             ]
@@ -27,7 +27,7 @@ def generate_launch_description():
         Node(
             package='assistant',
             executable='broadcaster',
-            name='broadcaster'
+            name='broadcaster',
             parameters=[
                 {'serial_port': LaunchConfiguration('broadcaster_serial_port')}
             ]
@@ -39,7 +39,7 @@ def generate_launch_description():
         Node(
             ackage='rplidar_ros',
             executable='rplidar_composition',
-            name='rplidar_composition'
+            name='rplidar_composition',
             parameters=[
                 {'serial_port': LaunchConfiguration('rplidar_serial_port'),
                 "frame_id":"lidar_link",
