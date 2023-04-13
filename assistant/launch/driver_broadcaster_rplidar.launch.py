@@ -9,7 +9,7 @@ from launch_ros.actions import Node
 def generate_launch_description():
     return LaunchDescription([
         DeclareLaunchArgument(
-            'driver_serial_port', default_value='/dev/serial/by-path/',
+            'driver_serial_port', default_value='/dev/serial/by-path/platform-fd500000.pcie-pci-0000:01:00.0-usb-0:1.2:1.0',
             description='Arduino serial port for the driver node'
         ),
         Node(
@@ -21,7 +21,7 @@ def generate_launch_description():
             ]
         ),
         DeclareLaunchArgument(
-            'broadcaster_serial_port', default_value='/dev/serial/by-path/',
+            'broadcaster_serial_port', default_value='/dev/serial/by-path/platform-fd500000.pcie-pci-0000:01:00.0-usb-0:1.2:1.0',
             description='Arduino serial port for the broadcaster node'
         ),
         Node(
@@ -33,8 +33,8 @@ def generate_launch_description():
             ]
         ),
         DeclareLaunchArgument(
-            'rplidar_serial_port', default_value='/dev/serial/by-path/',
-            description='Arduino serial port for the rplidar node'
+            'rplidar_serial_port', default_value='/dev/serial/by-path/platform-fd500000.pcie-pci-0000:01:00.0-usb-0:1.1:1.0',
+            description='Serial port for the rplidar node'
         ),
         Node(
             ackage='rplidar_ros',
