@@ -12,7 +12,7 @@ WHEEL_RADIUS = 0.05
 DISTANCE_FROM_CENTER = 0.18
 CORR_CONST = 0.0955
 SYSTEM_MATRIX = CORR_CONST/WHEEL_RADIUS*np.array([[1, 0, - DISTANCE_FROM_CENTER],[-1/2, -np.sqrt(3)/2, - DISTANCE_FROM_CENTER],[-1/2, np.sqrt(3)/2, - DISTANCE_FROM_CENTER]])
-
+V = 0.18
 class OdometryPublisher(Node):
 
     def __init__(self):
@@ -26,7 +26,7 @@ class OdometryPublisher(Node):
         self.current_time = self.get_clock().now()
         self.last_time = self.get_clock().now()
 
-        self.timer = self.create_timer(0.05, self.timer_callback)
+        self.timer = self.create_timer(0.02, self.timer_callback)
 
         self.declare_parameter('serial_port', value="/dev/serial/by-path/platform-fd500000.pcie-pci-0000:01:00.0-usb-0:1.2:1.0")
         self.serial_port = self.get_parameter('serial_port').value
@@ -51,8 +51,8 @@ class OdometryPublisher(Node):
         v_x = velocity[0]
         v_y = velocity[1]
         self.get_logger().info(str(v_x) +' , ' + str(v_y))
-        self.vx = v_x
-        self.vy = v_y
+        self.vx = v_x * V
+        self.vy = v_y * Vs
         self.vth = 0.0
         
 
