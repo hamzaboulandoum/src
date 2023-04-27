@@ -10,8 +10,8 @@ import numpy as np
 #constants
 WHEEL_RADIUS = 0.05
 DISTANCE_FROM_CENTER = 0.18
-CORR_CONST = 0.0955
-SYSTEM_MATRIX = CORR_CONST/WHEEL_RADIUS*np.array([[1, 0, - DISTANCE_FROM_CENTER],[-1/2, -np.sqrt(3)/2, - DISTANCE_FROM_CENTER],[-1/2, np.sqrt(3)/2, - DISTANCE_FROM_CENTER]])
+CORR_CONST = 0.15
+SYSTEM_MATRIX = 1/WHEEL_RADIUS*np.array([[1, 0, - DISTANCE_FROM_CENTER],[-1/2, -np.sqrt(3)/2, - DISTANCE_FROM_CENTER],[-1/2, np.sqrt(3)/2, - DISTANCE_FROM_CENTER]])
 V = 0.18
 class OdometryPublisher(Node):
 
@@ -51,8 +51,8 @@ class OdometryPublisher(Node):
         v_x = velocity[0]
         v_y = velocity[1]
         self.get_logger().info(str(v_x) +' , ' + str(v_y))
-        self.vx = v_x * V
-        self.vy = v_y * Vs
+        self.vx = v_x
+        self.vy = v_y
         self.vth = 0.0
         
 
