@@ -10,9 +10,9 @@ import numpy as np
 #constants
 WHEEL_RADIUS = 0.05
 DISTANCE_FROM_CENTER = 0.18
-CORR_CONST = 0.15
+# CORR_CONST = 0.15
+# V = 0.18
 SYSTEM_MATRIX = 1/WHEEL_RADIUS*np.array([[1, 0, - DISTANCE_FROM_CENTER],[-1/2, -np.sqrt(3)/2, - DISTANCE_FROM_CENTER],[-1/2, np.sqrt(3)/2, - DISTANCE_FROM_CENTER]])
-V = 0.18
 class OdometryPublisher(Node):
 
     def __init__(self):
@@ -50,17 +50,19 @@ class OdometryPublisher(Node):
         velocity = np.dot(np.linalg.inv(SYSTEM_MATRIX),U)
         v_x = velocity[0]
         v_y = velocity[1]
-        self.get_logger().info(str(v_x) +' , ' + str(v_y))
+        v_th = velocity[3]
+        self.get_logger().info(str(v_x) + ' , ' + str(v_y))
         self.vx = v_x
         self.vy = v_y
-        self.vth = 0.0
+        self.vth = v_th
         
 
         self.current_time = self.get_clock().now()
-
         dt = (self.current_time - self.last_time).nanoseconds / 1e9
-        delta_x = (self.vx * cos(self.th) - self.vy * sin(self.th)) * dt
-        delta_y = (self.vx * sin(self.th) + self.vy * cos(self.th)) * dt
+
+        q = np.dot(np.linalg.inv(ROTATION_MTRIX), velocity)
+        delta_x = (self.vx * cos(self.th) + self.vy * sin(self.th)) * dt
+        delta_y = (- 1 * self.vx * sin(self.th) + self.vy * cos(self.th)) * dt
         delta_th = self.vth * dt
 
         self.x += delta_x

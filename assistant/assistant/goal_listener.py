@@ -4,10 +4,10 @@ from rclpy.node import Node
 from geometry_msgs.msg import PoseStamped
 
 
-class Nav2Client(Node):
+class GoalListener(Node):
 
     def __init__(self):
-        super().__init__('nav2_client')
+        super().__init__('Goal_listener')
         self.action_client = ActionClient(self, NavigateToPose, 'navigate_to_pose')
         self.goal = NavigateToPose.Goal()
         self.subscription = self.create_subscription(
@@ -47,11 +47,11 @@ class Nav2Client(Node):
 def main(args=None):
     rclpy.init(args=args)
 
-    nav2_client = Nav2Client()
+    goalListener = GoalListener()
 
-    rclpy.spin(nav2_client)
+    rclpy.spin(goalListener)
 
-    nav2_client.destroy_node()
+    goalListener.destroy_node()
     rclpy.shutdown()
 
 

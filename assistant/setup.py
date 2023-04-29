@@ -24,7 +24,8 @@ setup(
     entry_points={
         'console_scripts': [
         'driver = assistant.driver:main',
-        'broadcaster = assistant.broadcaster:main'
+        'broadcaster = assistant.broadcaster:main',
+        'goal_listener = assistant.goal_listener:main'
         ],
     },
 )
