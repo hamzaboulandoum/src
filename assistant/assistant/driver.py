@@ -9,7 +9,7 @@ import math
 
 #constants
 WHEEL_RADIUS = 0.05
-DISTANCE_FROM_CENTER = 0.18
+DISTANCE_FROM_CENTER = 0.19
 
 SYSTEM_MATRIX = 1/WHEEL_RADIUS*np.array([[1, 0, - DISTANCE_FROM_CENTER],[-1/2, -np.sqrt(3)/2, - DISTANCE_FROM_CENTER],[-1/2, np.sqrt(3)/2, - DISTANCE_FROM_CENTER]])
 
@@ -42,7 +42,7 @@ class Driver(Node):
         # else :
         #     vx = linear_velocity_x/math.sqrt(linear_velocity_x**2 + linear_velocity_y**2)
         #     vy = linear_velocity_y/math.sqrt(linear_velocity_x**2 + linear_velocity_y**2)
-        
+
         
         data = str(vx) + " " + str(vy)
         self.get_logger().info(str(data))
