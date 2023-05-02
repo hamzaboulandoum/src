@@ -8,7 +8,7 @@ amcl:
     alpha3: 0.2
     alpha4: 0.2
     alpha5: 0.2
-    base_frame_id: "base_footprint"
+    base_frame_id: "base_link"
     beam_skip_distance: 0.5
     beam_skip_error_threshold: 0.9
     beam_skip_threshold: 0.3
@@ -104,16 +104,16 @@ controller_server:
     goal_checker:
       plugin: "nav2_controller::SimpleGoalChecker"
       xy_goal_tolerance: 0.25
-      yaw_goal_tolerance: 100
+      yaw_goal_tolerance: 100.0
       stateful: True
     # DWB parameters
     FollowPath:
       plugin: "dwb_core::DWBLocalPlanner"
       debug_trajectory_details: True
-      min_vel_x: -0.2
-      min_vel_y: -0.2
-      max_vel_x: 0.2
-      max_vel_y: 0.2
+      min_vel_x: -0.15
+      min_vel_y: -0.15
+      max_vel_x: 0.15
+      max_vel_y: 0.15
       max_vel_theta: 0
       min_speed_xy: -0.2
       max_speed_xy: 0.2

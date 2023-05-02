@@ -36,14 +36,17 @@ class Driver(Node):
         # Convert velocity commands to wheel speeds for a three-wheeled omnidirectional robot
         linear_velocity_x = msg.linear.x
         linear_velocity_y = msg.linear.y
-        vx = linear_velocity_x
-        vy = linear_velocity_y
-        # if linear_velocity_x == 0 and linear_velocity_y == 0:
-        #     vx = 0
-        #     vy = 0
-        # else :
-        #     vx = linear_velocity_x/math.sqrt(linear_velocity_x**2 + linear_velocity_y**2)
-        #     vy = linear_velocity_y/math.sqrt(linear_velocity_x**2 + linear_velocity_y**2)
+        
+
+        if linear_velocity_x == 0 and linear_velocity_y == 0:
+            vx = 0
+            vy = 0
+        else :
+            vx = linear_velocity_x/math.sqrt(linear_velocity_x**2 + linear_velocity_y**2)
+            vy = linear_velocity_y/math.sqrt(linear_velocity_x**2 + linear_velocity_y**2)
+        
+        vx = vx * 0.15
+        vy = vy * 0.15
 
         
         data = str(vx) + " " + str(vy)
