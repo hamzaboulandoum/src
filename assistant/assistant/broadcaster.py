@@ -26,7 +26,7 @@ class OdometryPublisher(Node):
         self.current_time = self.get_clock().now()
         self.last_time = self.get_clock().now()
 
-        self.timer = self.create_timer(0.02, self.timer_callback)
+        self.timer = self.create_timer(0.05, self.timer_callback)
 
         self.declare_parameter('serial_port', value="/dev/serial/by-path/platform-fd500000.pcie-pci-0000:01:00.0-usb-0:1.2:1.0")
         self.serial_port = self.get_parameter('serial_port').value
