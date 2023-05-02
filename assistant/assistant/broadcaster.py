@@ -45,7 +45,7 @@ class OdometryPublisher(Node):
 
         # Parse encoder data and calculate odometry values for a three-wheeled omnidirectional robot
         u_1, u_2, u_3 = map(float, encoder_data)
-        # self.get_logger().info(str(u_1) +' , ' + str(u_2)+' , ' + str(u_3))
+        self.get_logger().info("u1 u2 u3 : " + str(u_1) +' , ' + str(u_2)+' , ' + str(u_3))
         U = np.array([u_1, u_2, u_3])
         velocity = np.dot(np.linalg.inv(SYSTEM_MATRIX),U)
         v_x = velocity[0]
@@ -68,7 +68,7 @@ class OdometryPublisher(Node):
         self.y += delta_y
         self.th += delta_th
 
-        self.get_logger().info(str(self.x) + ' , ' + str(self.y) + ' , ' + str(self.th))
+        self.get_logger().info("x y theta : "str(self.x) + ' , ' + str(self.y) + ' , ' + str(self.th))
 
         odom_quat = Quaternion()
         odom_quat.z = sin(self.th/2.0)
