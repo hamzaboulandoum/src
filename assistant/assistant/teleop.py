@@ -2,6 +2,7 @@ import sys
 
 import geometry_msgs.msg
 import rclpy
+import time
 
 if sys.platform == 'win32':
     import msvcrt
@@ -99,6 +100,13 @@ def main():
     y = 0.0
     z = 0.0
     th = 0.0
+
+    x_prev = 0.0
+    y_prev= 0.0
+    z_prev = 0.0
+    th_prev = 0.0
+
+
     status = 0.0
 
     try:
@@ -128,6 +136,14 @@ def main():
                     break
 
             twist = geometry_msgs.msg.Twist()
+            
+            if x == 0 and y == 0:
+                x = 0
+                y = 0
+            else :
+                x = x/math.sqrt(x**2 + y**2)
+                y = y/math.sqrt(x**2 + y**2)
+            
             twist.linear.x = x * speed
             twist.linear.y = y * speed
             twist.linear.z = z * speed
@@ -135,6 +151,32 @@ def main():
             twist.angular.y = 0.0
             twist.angular.z = th * turn
             pub.publish(twist)
+
+
+            """
+            n = 10
+            r_x = (x_prev - x)/n
+            r_y = (y_prev - y)/n
+            r_z = (z_prev - z)/n
+            r_th = (th_prev - th)/n
+
+
+            for i in range(1,n + 1):
+                twist.linear.x = (x_prev - i * r_x) * speed
+                twist.linear.y = (y_prev - i * r_y) * speed
+                twist.linear.z = (z_prev - i * r_z) * speed
+                twist.angular.x = 0.0
+                twist.angular.y = 0.0
+                twist.angular.z = (th_prev - i * r_th) * turn
+                pub.publish(twist)
+                time.sleep(0.05)
+
+            x_prev = x
+            y_prev= y
+            z_prev = z
+            th_prev = th
+            
+            """
 
     except Exception as e:
         print(e)

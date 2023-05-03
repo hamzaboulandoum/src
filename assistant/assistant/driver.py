@@ -9,7 +9,7 @@ import math
 
 #constants
 WHEEL_RADIUS = 0.05
-DISTANCE_FROM_CENTER = 0.19
+DISTANCE_FROM_CENTER = 0.18
 
 SYSTEM_MATRIX = 1/WHEEL_RADIUS*np.array([[1, 0, - DISTANCE_FROM_CENTER],[-1/2, -np.sqrt(3)/2, - DISTANCE_FROM_CENTER],[-1/2, np.sqrt(3)/2, - DISTANCE_FROM_CENTER]])
 
@@ -39,15 +39,15 @@ class Driver(Node):
         w = msg.angular.z
         
 
-        if linear_velocity_x == 0 and linear_velocity_y == 0:
-            vx = 0
-            vy = 0
-        else :
-            vx = linear_velocity_x/math.sqrt(linear_velocity_x**2 + linear_velocity_y**2)
-            vy = linear_velocity_y/math.sqrt(linear_velocity_x**2 + linear_velocity_y**2)
+        #if linear_velocity_x == 0 and linear_velocity_y == 0:
+        #    vx = 0
+        #    vy = 0
+        #else :
+        #    vx = linear_velocity_x/math.sqrt(linear_velocity_x**2 + linear_velocity_y**2)
+        #    vy = linear_velocity_y/math.sqrt(linear_velocity_x**2 + linear_velocity_y**2)
         
-        vx = vx * 0.15
-        vy = vy * 0.15
+        vx = vx 
+        vy = vy 
 
         
         data = str(vx) + " " + str(vy) + " " + str(w)
