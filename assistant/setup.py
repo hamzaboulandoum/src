@@ -25,7 +25,8 @@ setup(
         'console_scripts': [
         'driver = assistant.driver:main',
         'broadcaster = assistant.broadcaster:main',
-        'goal_listener = assistant.goal_listener:main'
+        'goal_listener = assistant.goal_listener:main',
+        'teleop = assistant.teleop:main',
         ],
     },
 )

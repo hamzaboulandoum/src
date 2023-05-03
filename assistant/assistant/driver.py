@@ -36,6 +36,7 @@ class Driver(Node):
         # Convert velocity commands to wheel speeds for a three-wheeled omnidirectional robot
         linear_velocity_x = msg.linear.x
         linear_velocity_y = msg.linear.y
+        w = msg.angular.z
         
 
         if linear_velocity_x == 0 and linear_velocity_y == 0:
@@ -49,7 +50,7 @@ class Driver(Node):
         vy = vy * 0.15
 
         
-        data = str(vx) + " " + str(vy)
+        data = str(vx) + " " + str(vy) + " " + str(w)
         self.get_logger().info(str(data))
         self.serial.write(data.encode()) # sending data to arduino
 
