@@ -27,6 +27,10 @@ setup(
         'broadcaster = assistant.broadcaster:main',
         'goal_listener = assistant.goal_listener:main',
         'teleop = assistant.teleop:main',
+        'navigate = assistant.navigate:main',
+        'follower = assistant.follower:main',
+        'obstacles = assistant.obstacles:main',
+        'pose_publisher = assistant.pose_publisher:main',
         ],
     },
 )

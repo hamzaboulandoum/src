@@ -3,6 +3,7 @@ import sys
 import geometry_msgs.msg
 import rclpy
 import time
+import math
 
 if sys.platform == 'win32':
     import msvcrt
@@ -33,17 +34,18 @@ CTRL-C to quit
 """
 
 moveBindings = {
-    "o" : (-1,1,0,0),
-    "p" : (1,1,0,0),
-    "m" : (1,-1,0,0),
-    "l" : (-1,-1,0,0),
+    "b" : (0,-1,0,1),
+    "o" : (1,-1,0,0),
+    "p" : (-1,-1,0,0),
+    "m" : (-1,1,0,0),
+    "l" : (1,1,0,0),
 
     "y" : (0,0,0,1),
-    "u" : (0,1,0,0),
+    "u" : (0,-1,0,0),
     "i" : (0,0,0,-1),
-    "k" : (1,0,0,0),
-    "j" : (0,-1,0,0),
-    "h" : (-1,0,0,0),
+    "k" : (-1,0,0,0),
+    "j" : (0,1,0,0),
+    "h" : (1,0,0,0),
 
 
 }
@@ -94,8 +96,8 @@ def main():
     node = rclpy.create_node('teleop')
     pub = node.create_publisher(geometry_msgs.msg.Twist, 'cmd_vel', 10)
 
-    speed = 0.15
-    turn = 1.0
+    speed = 1.0
+    turn = 0.15
     x = 0.0
     y = 0.0
     z = 0.0
@@ -144,6 +146,7 @@ def main():
                 x = x/math.sqrt(x**2 + y**2)
                 y = y/math.sqrt(x**2 + y**2)
             
+            
             twist.linear.x = x * speed
             twist.linear.y = y * speed
             twist.linear.z = z * speed
@@ -151,10 +154,10 @@ def main():
             twist.angular.y = 0.0
             twist.angular.z = th * turn
             pub.publish(twist)
-
+            
 
             """
-            n = 10
+            n = 5
             r_x = (x_prev - x)/n
             r_y = (y_prev - y)/n
             r_z = (z_prev - z)/n
@@ -169,14 +172,14 @@ def main():
                 twist.angular.y = 0.0
                 twist.angular.z = (th_prev - i * r_th) * turn
                 pub.publish(twist)
-                time.sleep(0.05)
+                time.sleep(1.5)
 
             x_prev = x
             y_prev= y
             z_prev = z
             th_prev = th
-            
             """
+            
 
     except Exception as e:
         print(e)

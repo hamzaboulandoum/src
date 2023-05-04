@@ -46,8 +46,8 @@ class Driver(Node):
         #    vx = linear_velocity_x/math.sqrt(linear_velocity_x**2 + linear_velocity_y**2)
         #    vy = linear_velocity_y/math.sqrt(linear_velocity_x**2 + linear_velocity_y**2)
         
-        vx = vx 
-        vy = vy 
+        vx = linear_velocity_x 
+        vy = linear_velocity_y 
 
         
         data = str(vx) + " " + str(vy) + " " + str(w)
