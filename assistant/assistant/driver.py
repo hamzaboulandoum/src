@@ -33,7 +33,6 @@ class Driver(Node):
         
 
     def callback(self, msg):
-        # Convert velocity commands to wheel speeds for a three-wheeled omnidirectional robot
         linear_velocity_x = msg.linear.x
         linear_velocity_y = msg.linear.y
         w = msg.angular.z

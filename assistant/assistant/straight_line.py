@@ -4,18 +4,25 @@ from geometry_msgs.msg import Twist
 from nav_msgs.msg import Path
 from sensor_msgs.msg import LaserScan
 
-class PathFollowerObstacleNode(Node):
+class StraightLine(Node):
     def __init__(self):
-        super().__init__('path_follower_obstacle')
-        self.create_subscription(Path, '/path', self.path_callback, 10)
+        super().__init__('straight_line')
+        self.subscription = self.create_subscription(
+            PoseStamped,
+            '/goal_pose',
+            self.goal_callback,
+            10)
         self.create_subscription(Path, '/pose', self.pose_callback, 10)
         self.create_subscription(LaserScan, '/scan', self.scan_callback, 10)
         self.publisher_ = self.create_publisher(Twist, '/cmd_vel', 10)
+
         self.current_pose_ = None
-        self.current_segment_ = 0
-        self.path_ = None
+        self.goal_pose = None
         self.obstacle_threshold_ = 0.2  
     
+    def goal_callback(self, msg):
+        self.goal_pose = msg
+
     def scan_callback(self, msg):
         if msg.ranges:
             if min(msg.ranges) < self.obstacle_threshold_:
@@ -24,14 +31,11 @@ class PathFollowerObstacleNode(Node):
                 twist.angular.z = 0.0
                 self.publisher_.publish(twist)
 
-    def path_callback(self, msg):
-        self.path_ = msg  
-        self.current_segment_ = 0  
 
     def pose_callback(self, msg):
         self.current_pose_ = msg  
-        if self.path_ is not None:
-            self.follow_path()  
+        if self.goal_pose is not None:
+            self.go_to_goal()  
 
     def scan_callback(self, msg):
         
@@ -42,10 +46,10 @@ class PathFollowerObstacleNode(Node):
                 twist.angular.z = 0.0
                 self.publisher_.publish(twist)
 
-    def follow_path(self):
+    def go_to_goal(self):
        
         start_pose = self.current_pose_
-        end_pose = self.path_.poses[self.current_segment_ + 1]
+        end_pose = self.goal_pose
         segment = (start_pose.pose.position.x, start_pose.pose.position.y), (end_pose.pose.position.x, end_pose.pose.position.y)
 
         
@@ -68,13 +72,9 @@ class PathFollowerObstacleNode(Node):
 
 
         if distance < 0.1:
-            self.current_segment_ += 1
-
-            
-            if self.current_segment_ >= len(self.path_.poses) - 1:
-                twist.linear.y= 0.0
-                twist.angular.z = 0.0
-                self.publisher_.publish(twist)
-                self.path = None
+            twist.linear.y= 0.0
+            twist.angular.z = 0.0
+            self.publisher_.publish(twist)
+            self.goal_pose = None
 
 

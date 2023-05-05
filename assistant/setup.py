@@ -31,6 +31,7 @@ setup(
         'follower = assistant.follower:main',
         'obstacles = assistant.obstacles:main',
         'pose_publisher = assistant.pose_publisher:main',
+        'straight_line = assistant.straight_line:main',
         ],
     },
 )

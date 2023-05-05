@@ -33,7 +33,7 @@ class PathPlanner(Node):
             self.publisher.publish(path_msg)
 
     def map_callback(self, msg):
-        self.map_ = msg  # Store the received map message
+        self.map_ = msg  
 
     def get_map(self):
         while self.map_ is None:
@@ -45,22 +45,22 @@ class PathPlanner(Node):
         for i in range(10):
             try:
                 transform = self.tf_buffer.lookup_transform(
-                    'map',  # target frame
-                    'base_link',        # source frame
-                    self.get_clock().now(), # time (use latest)
-                    timeout=rclpy.duration.Duration(seconds=1.0)) # timeout
+                    'map', 
+                    'base_link',       
+                    self.get_clock().now(), 
+                    timeout=rclpy.duration.Duration(seconds=1.0)) 
                 break
             except (tf2_ros.LookupException, tf2_ros.ConnectivityException, tf2_ros.ExtrapolationException) as e:
                 self.get_logger().warn('Failed to get transform from map to base_link: {}'.format(e))
             
             return
 
-        # Update the starting pose of the path planner using the transform
+        
         self.start_pose.pose.position.x = transform.transform.translation.x
         self.start_pose.pose.position.y = transform.transform.translation.y
         self.start_pose.pose.orientation = transform.transform.rotation
 
-        # Convert start_pose and goal_pose to (x, y, theta) tuples
+        
         start = (self.start_pose.pose.position.x, self.start_pose.pose.position.y)
         goal = (self.goal_pose.pose.position.x, self.goal_pose.pose.position.y)
 
@@ -75,7 +75,7 @@ class PathPlanner(Node):
         if len(path) < 2:
             return None
 
-        # Convert the path from a list of (x, y, theta) tuples to a Path message
+        
         path_msg = Path()
         path_msg.header.stamp = self.get_clock().now().to_msg()
         path_msg.header.frame_id = 'map'

@@ -45,7 +45,7 @@ class OdometryPublisher(Node):
 
         #self.get_logger().info(str(encoder_data))
 
-        # Parse encoder data and calculate odometry values for a three-wheeled omnidirectional robot
+       
         u_1, u_2, u_3 = map(float, encoder_data)
         
         if np.abs(u_1)>=THERSH  or np.abs(u_2)>=THERSH or np.abs(u_3)>=THERSH:
