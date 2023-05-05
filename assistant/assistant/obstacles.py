@@ -14,7 +14,7 @@ class PathFollowerObstacleNode(Node):
         self.current_pose_ = None
         self.current_segment_ = 0
         self.path_ = None
-        self.obstacle_threshold_ = 0.5  # Distance threshold for stopping when an obstacle is close enough
+        self.obstacle_threshold_ = 0.2  # Distance threshold for stopping when an obstacle is close enough
     
     def scan_callback(self, msg):
         # Check if there is an obstacle close enough to stop the robot
@@ -39,7 +39,7 @@ class PathFollowerObstacleNode(Node):
         if msg.ranges:
             if min(msg.ranges) < self.obstacle_threshold_:
                 twist = Twist()
-                twist.linear.x = 0.0
+                twist.linear.y = 0.0
                 twist.angular.z = 0.0
                 self.publisher_.publish(twist)
 
@@ -73,6 +73,10 @@ class PathFollowerObstacleNode(Node):
         if distance < 0.1:
             self.current_segment_ += 1
 
-            # If we have reached the
+            # If we have reached the end of the path, stop the robot
+            if self.current_segment_ >= len(self.path_.poses) - 1:
+                twist.linear.y= 0.0
+                twist.angular.z = 0.0
+                self.publisher_.publish(twist)
 
 

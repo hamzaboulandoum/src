@@ -50,7 +50,7 @@ class PathFollowerNode(Node):
 
         # If the current pose is close enough to the next waypoint, move to the next path segment
         if distance < 0.1:
-            self.current_segment_ += 1s
+            self.current_segment_ += 1
 
             # If we have reached the end of the path, stop the robot
             if self.current_segment_ >= len(self.path_.poses) - 1:

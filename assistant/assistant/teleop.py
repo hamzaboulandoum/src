@@ -35,6 +35,7 @@ CTRL-C to quit
 
 moveBindings = {
     "b" : (0,-1,0,1),
+
     "o" : (1,-1,0,0),
     "p" : (-1,-1,0,0),
     "m" : (-1,1,0,0),
@@ -96,7 +97,7 @@ def main():
     node = rclpy.create_node('teleop')
     pub = node.create_publisher(geometry_msgs.msg.Twist, 'cmd_vel', 10)
 
-    speed = 1.0
+    speed = 0.15
     turn = 0.15
     x = 0.0
     y = 0.0
